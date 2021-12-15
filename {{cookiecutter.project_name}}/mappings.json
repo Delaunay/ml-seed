@@ -1,0 +1,10 @@
+    [
+        ["seedproject", "project_name"],
+        ["seeddescription", "author"],
+        ["seed@email", "email"],
+        ["seeddescription", "description"],
+        ["seedcopyright", "copyright"],
+        ["seedurl", "url"],
+        ["seedversion", "version"],
+        ["seedlicense", "license"]
+    ]
