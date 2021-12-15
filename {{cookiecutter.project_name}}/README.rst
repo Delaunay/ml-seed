@@ -1,19 +1,37 @@
-seedproject
+{{cookiecutter.project_name}}
 =============================
+
+.. image:: https://readthedocs.org/projects/ml-repo-example/badge/?version=latest
+   :target: https://ml-repo-example.readthedocs.io/en/latest/?badge=latest
+   :alt: Documentation Status
+
+
+.. image:: https://github.com/Delaunay/slurm-examples/actions/workflows/test.yml/badge.svg
+   :target: https://github.com/Delaunay/slurm-examples/actions/workflows/test.yml
+   :alt: Tests
+      
+
+.. image:: https://codecov.io/gh/Delaunay/slurm-examples/branch/main/graph/badge.svg?token=ELkrYgJ9kI
+   :target: https://codecov.io/gh/Delaunay/slurm-examples
+   :alt: Coverage
+
+
+Getting Started
+~~~~~~~~~~~~~~~
 
 Use this as a cookiecutter
 
 .. code-block:: bash
 
-   cookiecutter 
+   cookiecutter https://github.com/Delaunay/ml-seed
 
 
 Layout
 ~~~~~~
 
-.. code-block::
+.. code-block:: bash
 
-   <seedproject>/
+   <{{cookiecutter.project_name}}>/
    ├── .github                   # CI jobs to run on every push
    │   └── workflows
    │       └── test.yml
@@ -24,7 +42,7 @@ Layout
    │   ├── multi-nodes.sh
    │   ├── single-gpu.sh
    │   └── hpo.sh
-   ├── seedproject
+   ├── {{cookiecutter.project_name}}
    │   ├── conf                  # configurations
    |   |   ├── slurm.yml          
    │   │   └── hydra.yml           
@@ -35,6 +53,9 @@ Layout
    │   │   ├── classification.py 
    │   │   └── reinforcement.py  
    │   └── train.py              # main train script
+   ├── tests                     # testing
+   │   ├── test_model.py 
+   |   └── test_loader.py
    ├── .readthedocs.yml          # how to generate the docs in readthedocs
    ├── LICENSE                   # 
    ├── README.rst                # description of current project
@@ -54,7 +75,7 @@ Each jobs are independant and will work toward finding the best set of Hyperpara
 
 .. code-block:: bash
 
-   sbatch --array=0-100 --gres=gpu:1 --cpus-per-gpu=4 --mem=16Go scripts/hpo.sh seedproject/train.py
+   sbatch --array=0-100 --gres=gpu:1 --cpus-per-gpu=4 --mem=16Go scripts/hpo.sh {{cookiecutter.project_name}}/train.py
 
 
 Multi GPU single node
@@ -65,7 +86,7 @@ It will use a total of 16 CPUs, 16 Go of RAM and 4 GPUs.
 
 .. code-block:: bash
 
-   sbatch --nodes 1 --gres=gpu:4 --cpus-per-gpu=4 --mem=16G scripts/multi-gpu.sh seedproject/train.py
+   sbatch --nodes 1 --gres=gpu:4 --cpus-per-gpu=4 --mem=16G scripts/multi-gpu.sh {{cookiecutter.project_name}}/train.py
 
 
 Multi GPU multiple node
@@ -76,7 +97,7 @@ It will use a total of 48 CPUs, 48 Go of RAM and 12 GPUs.
 
 .. code-block:: bash
 
-   sbatch --nodes 3 --gres=gpu:4 --cpus-per-gpu=4 --mem=16G scripts/multi-gpu.sh seedproject/train.py
+   sbatch --nodes 3 --gres=gpu:4 --cpus-per-gpu=4 --mem=16G scripts/multi-gpu.sh {{cookiecutter.project_name}}/train.py
 
 
 Contributing
