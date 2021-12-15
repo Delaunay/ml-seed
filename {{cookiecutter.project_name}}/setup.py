@@ -6,8 +6,8 @@ if __name__ == "__main__":
     setup(
         name="{{cookiecutter.project_name}}",
         version="0.0.0",
-        description="{{cookiecutter.author}}",
-        author="seedauthor",
+        description="{{cookiecutter.description}}",
+        author="{{cookiecutter.author}}",
         packages=find_packages(),
         setup_requires=["setuptools"],
     )
