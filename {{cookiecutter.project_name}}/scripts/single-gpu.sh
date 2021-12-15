@@ -2,7 +2,7 @@
 
 
 # Usage:
-#   sbatch --gres=gpu:1 --cpus-per-gpu=4 --mem=16G scripts/single-gpu.sh seedproject/train_normal.py
+#   sbatch --gres=gpu:1 --cpus-per-gpu=4 --mem=16G scripts/single-gpu.sh {{cookiecutter.project_name}}/train_normal.py
 #
 
 # Slurm configuration
