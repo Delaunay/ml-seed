@@ -1,6 +1,6 @@
 """Seed module doc"""
 
-__descr__ = "{{cookiecutter.author}}"
+__descr__ = "{{cookiecutter.description}}"
 __version__ = "{{cookiecutter.version}}"
 __license__ = "{{cookiecutter.license}}"
 __author__ = u"{{cookiecutter.author}}"
