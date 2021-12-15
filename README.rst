@@ -1,42 +1,41 @@
-    Machine Learning Seed Repository
-    ===============================
+Machine Learning Seed Repository
+===============================
 
-    Features
-    ~~~~~~~~
+Features
+~~~~~~~~
 
-    * Sphinx doc generation
+* Sphinx doc generation
 
-        * Read the docs ready
+    * Read the docs ready
 
-    * Github CI
+* Github CI
 
-        * Test Coverage + Doctest
-        * black formating
-        * pylint
-        * isort
-        * docs8
+    * Test Coverage + Doctest
+    * black formating
+    * pylint
+    * isort
+    * docs8
 
-    * slurm launch script
+* slurm launch script
 
-    * pip installable
+* pip installable
 
-    Get started
-    ~~~~~~~~~~~
+Get started
+~~~~~~~~~~~
 
-    .. code-block:: bash
+.. code-block:: bash
 
-       pip install cookiecutter
-       cookiecutter https://github.com/Delaunay/ml-seed
-        
+    pip install cookiecutter
+    cookiecutter https://github.com/Delaunay/ml-seed
+    
 
-    Automation
-    ~~~~~~~~~~
+Automation
+~~~~~~~~~~
 
-    Auto format your code before pushing
+Auto format your code before pushing
 
-    .. code-block:: bash
+.. code-block:: bash
 
-       tox -e run-block
+    tox -e run-block
 
-       tox -e run-isort
-
+    tox -e run-isort
