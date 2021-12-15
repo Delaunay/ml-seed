@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Usage:
-#   sbatch --nodes 1 --gres=gpu:4 --cpus-per-gpu=4 --mem=16G scripts/multi-gpu.sh {{cookiecutter.project_name}}/train_normal.py
+#   sbatch --nodes 1 --gres=gpu:4 --cpus-per-gpu=4 --mem=16G scripts/multi-gpu.sh seedproject/train_normal.py
 #
 
 

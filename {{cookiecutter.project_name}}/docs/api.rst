@@ -1,7 +1,7 @@
-{{cookiecutter.project_name}}
+seedproject
 =============================
 
-.. automodule:: {{cookiecutter.project_name}}
+.. automodule:: seedproject
     :members:
     :undoc-members:
     :show-inheritance:

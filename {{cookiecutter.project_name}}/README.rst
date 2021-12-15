@@ -1,4 +1,4 @@
-{{cookiecutter.project_name}}
+seedproject
 =============================
 
 .. image:: https://readthedocs.org/projects/seedrepo/badge/?version=latest
@@ -6,13 +6,13 @@
    :alt: Documentation Status
 
 
-.. image:: https://github.com/{{cookiecutter.seedauthor}}/seedrepo/actions/workflows/test.yml/badge.svg
-   :target: https://github.com/{{cookiecutter.seedauthor}}/seedrepo/actions/workflows/test.yml
+.. image:: https://github.com/seedgithub/seedrepo/actions/workflows/test.yml/badge.svg
+   :target: https://github.com/seedgithub/seedrepo/actions/workflows/test.yml
    :alt: Tests
       
 
-.. image:: https://codecov.io/gh/{{cookiecutter.seedauthor}}/seedrepo/branch/master/graph/badge.svg
-   :target: https://codecov.io/gh/{{cookiecutter.seedauthor}}/seedrepo
+.. image:: https://codecov.io/gh/seedgithub/seedrepo/branch/master/graph/badge.svg
+   :target: https://codecov.io/gh/seedgithub/seedrepo
    :alt: Coverage
 
 
@@ -31,7 +31,7 @@ Layout
 
 .. code-block:: bash
 
-   <{{cookiecutter.project_name}}>/
+   <seedproject>/
    ├── .github                   # CI jobs to run on every push
    │   └── workflows
    │       └── test.yml
@@ -42,7 +42,7 @@ Layout
    │   ├── multi-nodes.sh
    │   ├── single-gpu.sh
    │   └── hpo.sh
-   ├── {{cookiecutter.project_name}}
+   ├── seedproject
    │   ├── conf                  # configurations
    |   |   ├── slurm.yml          
    │   │   └── hydra.yml           
@@ -75,7 +75,7 @@ Each jobs are independant and will work toward finding the best set of Hyperpara
 
 .. code-block:: bash
 
-   sbatch --array=0-100 --gres=gpu:1 --cpus-per-gpu=4 --mem=16Go scripts/hpo.sh {{cookiecutter.project_name}}/train.py
+   sbatch --array=0-100 --gres=gpu:1 --cpus-per-gpu=4 --mem=16Go scripts/hpo.sh seedproject/train.py
 
 
 Multi GPU single node
@@ -86,7 +86,7 @@ It will use a total of 16 CPUs, 16 Go of RAM and 4 GPUs.
 
 .. code-block:: bash
 
-   sbatch --nodes 1 --gres=gpu:4 --cpus-per-gpu=4 --mem=16G scripts/multi-gpu.sh {{cookiecutter.project_name}}/train.py
+   sbatch --nodes 1 --gres=gpu:4 --cpus-per-gpu=4 --mem=16G scripts/multi-gpu.sh seedproject/train.py
 
 
 Multi GPU multiple node
@@ -97,7 +97,7 @@ It will use a total of 48 CPUs, 48 Go of RAM and 12 GPUs.
 
 .. code-block:: bash
 
-   sbatch --nodes 3 --gres=gpu:4 --cpus-per-gpu=4 --mem=16G scripts/multi-gpu.sh {{cookiecutter.project_name}}/train.py
+   sbatch --nodes 3 --gres=gpu:4 --cpus-per-gpu=4 --mem=16G scripts/multi-gpu.sh seedproject/train.py
 
 
 Contributing
@@ -105,5 +105,5 @@ Contributing
 
 .. code-block:: bash
 
-   pip install git+https://github.com/{{cookiecutter.seedauthor}}/seedrepo
+   pip install git+https://github.com/seedgithub/seedrepo
 
