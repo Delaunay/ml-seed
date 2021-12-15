@@ -1,10 +1,10 @@
     [
-        ["seedproject", "project_name"],
-        ["seeddescription", "author"],
-        ["seed@email", "email"],
-        ["seeddescription", "description"],
-        ["seedcopyright", "copyright"],
-        ["seedurl", "url"],
-        ["seedversion", "version"],
-        ["seedlicense", "license"]
+        ["{{cookiecutter.project_name}}", "project_name"],
+        ["{{cookiecutter.author}}", "author"],
+        ["{{cookiecutter.email}}", "email"],
+        ["{{cookiecutter.author}}", "description"],
+        ["{{cookiecutter.copyright}}", "copyright"],
+        ["{{cookiecutter.url}}", "url"],
+        ["{{cookiecutter.version}}", "version"],
+        ["{{cookiecutter.license}}", "license"]
     ]
