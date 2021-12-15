@@ -21,7 +21,7 @@ update-doc: build-doc serve-doc
 
 jobname = output-magic.txt
 resouces = --cpus-per-gpu=4 --mem-per-gpu=16Go
-trainscript = seedproject/train_normal.py -vvv --cuda
+trainscript = {{cookiecutter.project_name}}/train_normal.py -vvv --cuda
 
 hpo:
 	# 100 Jobs with 20 in parallel max

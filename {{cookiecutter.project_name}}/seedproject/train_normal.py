@@ -15,7 +15,7 @@ from torch.utils.data import DataLoader, RandomSampler
 from torchvision import transforms
 from torchvision.datasets import CIFAR10
 
-from seedproject.models.lenet import LeNet
+from {{cookiecutter.project_name}}.models.lenet import LeNet
 
 log = logging.getLogger()
 
@@ -557,7 +557,7 @@ if __name__ == "__main__":
     #
     # You can test the script with a single GPU using the command below
     #
-    #   torchrun --nproc_per_node=4 --nnodes=1 seedproject/train_normal.py -vvv
+    #   torchrun --nproc_per_node=4 --nnodes=1 {{cookiecutter.project_name}}/train_normal.py -vvv
     #
     # if you have a single GPU:
     #   Launch 2 processes on the device:0
@@ -570,7 +570,7 @@ if __name__ == "__main__":
     #
     #   Single GPU
     #
-    #   python seedproject/train_normal.py -vv
+    #   python {{cookiecutter.project_name}}/train_normal.py -vv
     #
     # Launch 2 processes on the device:0
     #
