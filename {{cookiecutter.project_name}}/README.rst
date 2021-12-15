@@ -1,17 +1,40 @@
 seedproject
 =============================
 
+.. image:: https://readthedocs.org/projects/ml-repo-example/badge/?version=latest
+   :target: https://ml-repo-example.readthedocs.io/en/latest/?badge=latest
+   :alt: Documentation Status
+
+
+.. image:: https://github.com/Delaunay/slurm-examples/actions/workflows/style.yml/badge.svg
+   :target: https://github.com/Delaunay/slurm-examples/actions/workflows/style.yml
+   :alt: Style
+      
+
+.. image:: https://github.com/Delaunay/slurm-examples/actions/workflows/test.yml/badge.svg
+   :target: https://github.com/Delaunay/slurm-examples/actions/workflows/test.yml
+   :alt: Tests
+      
+
+.. image:: https://codecov.io/gh/Delaunay/slurm-examples/branch/main/graph/badge.svg?token=ELkrYgJ9kI
+   :target: https://codecov.io/gh/Delaunay/slurm-examples
+   :alt: Coverage
+
+
+Getting Started
+~~~~~~~~~~~~~~~
+
 Use this as a cookiecutter
 
 .. code-block:: bash
 
-   cookiecutter 
+   cookiecutter https://github.com/Delaunay/ml-seed
 
 
 Layout
 ~~~~~~
 
-.. code-block::
+.. code-block:: bash
 
    <seedproject>/
    ├── .github                   # CI jobs to run on every push
@@ -35,6 +58,9 @@ Layout
    │   │   ├── classification.py 
    │   │   └── reinforcement.py  
    │   └── train.py              # main train script
+   ├── tests                     # testing
+   │   ├── test_model.py 
+   |   └── test_loader.py
    ├── .readthedocs.yml          # how to generate the docs in readthedocs
    ├── LICENSE                   # 
    ├── README.rst                # description of current project
