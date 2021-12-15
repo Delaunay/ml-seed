@@ -1,18 +1,18 @@
 {{cookiecutter.project_name}}
 =============================
 
-.. image:: https://readthedocs.org/projects/ml-repo-example/badge/?version=latest
-   :target: https://ml-repo-example.readthedocs.io/en/latest/?badge=latest
+.. image:: https://readthedocs.org/projects/{{cookiecutter.project_name}}/badge/?version=latest
+   :target: https://{{cookiecutter.project_name}}.readthedocs.io/en/latest/?badge=latest
    :alt: Documentation Status
 
 
-.. image:: https://github.com/Delaunay/slurm-examples/actions/workflows/test.yml/badge.svg
-   :target: https://github.com/Delaunay/slurm-examples/actions/workflows/test.yml
+.. image:: https://github.com/{{cookiecutter.author}}/{{cookiecutter.project_name}}/actions/workflows/test.yml/badge.svg
+   :target: https://github.com/{{cookiecutter.author}}/{{cookiecutter.project_name}}/actions/workflows/test.yml
    :alt: Tests
       
 
-.. image:: https://codecov.io/gh/Delaunay/slurm-examples/branch/main/graph/badge.svg?token=ELkrYgJ9kI
-   :target: https://codecov.io/gh/Delaunay/slurm-examples
+.. image:: https://codecov.io/gh/{{cookiecutter.author}}/{{cookiecutter.project_name}}/branch/master/graph/badge.svg
+   :target: https://codecov.io/gh/{{cookiecutter.author}}/{{cookiecutter.project_name}}
    :alt: Coverage
 
 
@@ -105,5 +105,5 @@ Contributing
 
 .. code-block:: bash
 
-   pip install git+https://github.com/Delaunay/slurm-examples
+   pip install git+https://github.com/{{cookiecutter.author}}/{{cookiecutter.project_name}}
 
