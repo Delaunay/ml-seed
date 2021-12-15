@@ -25,9 +25,15 @@ Get started
 
 .. code-block:: bash
 
-    pip install cookiecutter
-    cookiecutter https://github.com/Delaunay/ml-seed
+   pip install cookiecutter
+   cookiecutter https://github.com/Delaunay/ml-seed
     
+
+Example
+~~~~~~~
+
+_ is an example of reposity than can be generated
+using this cookie cutter.
 
 Automation
 ~~~~~~~~~~
@@ -36,6 +42,15 @@ Auto format your code before pushing
 
 .. code-block:: bash
 
-    tox -e run-block
+   tox -e run-block
 
-    tox -e run-isort
+   tox -e run-isort
+
+Contributing
+~~~~~~~~~~~~
+
+To update this template you should modify _
+the change will automatically be ported to the cookiecutter version
+
+To update the documentation of this template you should fork this project.
+
