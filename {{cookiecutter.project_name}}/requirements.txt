@@ -1,5 +1,5 @@
-git+https://github.com/{{cookiecutter.seedauthor}}/mlbaselines.git
-git+https://github.com/{{cookiecutter.seedauthor}}/sample-space
+git+https://github.com/Delaunay/mlbaselines.git
+git+https://github.com/Delaunay/sample-space
 torch
 torchvision
 filelock
