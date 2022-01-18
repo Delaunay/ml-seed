@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
-{{cookiecutter.project_name}} documentation build configuration file.
+seedproject documentation build configuration file.
 
 This file is execfile()d with the current directory set to its
 containing dir.
@@ -32,12 +32,12 @@ import sys
 
 docs_src_path = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, docs_src_path)
-src_path = os.path.abspath(os.path.join(docs_src_path, '..', '{{cookiecutter.project_name}}'))
+src_path = os.path.abspath(os.path.join(docs_src_path, '..', 'seedproject'))
 sys.path.insert(0, src_path)
 src_path = os.path.abspath(os.path.join(docs_src_path, '..'))
 sys.path.insert(0, src_path)
 
-import {{cookiecutter.project_name}}  # noqa
+import seedproject  # noqa
 
 # -- General configuration ------------------------------------------------
 
@@ -64,10 +64,10 @@ extensions = [
 autodoc_inherit_docstrings = True
 
 # General information about the project.
-project = u'{{cookiecutter.project_name}}'
-_full_version = {{cookiecutter.project_name}}.__version__
-author = {{cookiecutter.project_name}}.__author__
-copyright = {{cookiecutter.project_name}}.__copyright__
+project = u'seedproject'
+_full_version = seedproject.__version__
+author = seedproject.__author__
+copyright = seedproject.__copyright__
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -161,7 +161,7 @@ html_sidebars = {
 # -- Options for HTMLHelp output ------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = '{{cookiecutter.project_name}}-doc'
+htmlhelp_basename = 'seedproject-doc'
 
 
 # -- Options for LaTeX output ---------------------------------------------
@@ -188,7 +188,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, '{{cookiecutter.project_name}}.tex', u'{{cookiecutter.project_name}} Documentation',
+    (master_doc, 'seedproject.tex', u'seedproject Documentation',
      u'authors', 'manual'),
 ]
 
@@ -198,7 +198,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, '{{cookiecutter.project_name}}', '{{cookiecutter.project_name}} Documentation',
+    (master_doc, 'seedproject', 'seedproject Documentation',
      [author], 1)
 ]
 
@@ -209,8 +209,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, '{{cookiecutter.project_name}}', '{{cookiecutter.project_name}} Documentation',
-     author, '{{cookiecutter.project_name}}', {{cookiecutter.project_name}}.__descr__,
+    (master_doc, 'seedproject', 'seedproject Documentation',
+     author, 'seedproject', seedproject.__descr__,
      'Miscellaneous'),
 ]
 
