@@ -1,8 +1,8 @@
 #!/bin/bash
-
+set -evx
 
 # Usage:
-#   sbatch --gres=gpu:1 --cpus-per-gpu=4 --mem=16G scripts/single-gpu.sh {{cookiecutter.project_name}}/train_normal.py
+#   sbatch --gres=gpu:1 --cpus-per-gpu=4 --mem=16G scripts/single-gpu.sh seedproject/train_normal.py
 #
 
 # Slurm configuration
@@ -10,18 +10,26 @@
 #SBATCH --exclude=kepler4,kepler3
 
 
-# Setup
+# Python
 # ===================
 
-module load python/3.7
-module load python/3.7/cuda/11.1/cudnn/8.0/pytorch
-source ~/envs/py37/bin/activate
+module load miniconda/3
+conda activate py39
 
-export SEEDPROJECT_DATASET_PATH=$SLURM_TMPDIR/dataset
+
+# Environment
+# ===================
+
+export SEEDPROJECT_DATASET_DEST=$SLURM_TMPDIR/dataset
 export SEEDPROJECT_CHECKPOINT_PATH=~/scratch/checkpoint
+
+
+# Run
+# ===================
 
 cmd="$@"
 
 echo $cmd
 
 python $cmd
+
