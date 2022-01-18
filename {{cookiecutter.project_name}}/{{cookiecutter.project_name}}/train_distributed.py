@@ -31,7 +31,7 @@ def option(path, default=None, vtype=str):
     """Fetch a configurable value in the environment"""
 
     path = path.replace(".", "_").upper()
-    full = f"SEEDPROJECT_{path}"
+    full = f"{{cookiecutter.PROJECT_NAME}}_{path}"
     value = vtype(os.environ.get(full, default))
     return value
 

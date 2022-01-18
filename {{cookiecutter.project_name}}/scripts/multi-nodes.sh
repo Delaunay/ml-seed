@@ -50,8 +50,8 @@ export OMP_NUM_THREADS=$SLURM_CPUS_PER_GPU
 #             $SLURM_MEM_PER_NODE
 export MEMORY=$SLURM_MEM_PER_GPU
 
-export SEEDPROJECT_DATASET_DEST=$SLURM_TMPDIR/dataset
-export SEEDPROJECT_CHECKPOINT_PATH=~/scratch/checkpoint
+export {{cookiecutter.PROJECT_NAME}}_DATASET_DEST=$SLURM_TMPDIR/dataset
+export {{cookiecutter.PROJECT_NAME}}_CHECKPOINT_PATH=~/scratch/checkpoint
 
 
 # Run

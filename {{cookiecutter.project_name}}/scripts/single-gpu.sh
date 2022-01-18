@@ -2,7 +2,7 @@
 set -evx
 
 # Usage:
-#   sbatch --gres=gpu:1 --cpus-per-gpu=4 --mem=16G scripts/single-gpu.sh seedproject/train_normal.py
+#   sbatch --gres=gpu:1 --cpus-per-gpu=4 --mem=16G scripts/single-gpu.sh {{cookiecutter.project_name}}/train_normal.py
 #
 
 # Slurm configuration
@@ -20,8 +20,8 @@ conda activate py39
 # Environment
 # ===================
 
-export SEEDPROJECT_DATASET_DEST=$SLURM_TMPDIR/dataset
-export SEEDPROJECT_CHECKPOINT_PATH=~/scratch/checkpoint
+export {{cookiecutter.PROJECT_NAME}}_DATASET_DEST=$SLURM_TMPDIR/dataset
+export {{cookiecutter.PROJECT_NAME}}_CHECKPOINT_PATH=~/scratch/checkpoint
 
 
 # Run
