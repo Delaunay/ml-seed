@@ -1,10 +1,13 @@
     {
         "project_name": "myproject",
+        "PROJECT_NAME": "MY_PROJECT",
         "author": "Anonymous",
+        "github_nickname": "githubacct",
+        "github_repo": "reponame",
         "email": "anony@mous.com",
         "description": "Python seed project for productivity",
         "copyright": "2021",
-        "url": "http://github.com/test",
+        "url": "http://github.com/github/project",
         "version": "version",
         "license": "BSD 3-Clause License",
         "_copy_without_render": [

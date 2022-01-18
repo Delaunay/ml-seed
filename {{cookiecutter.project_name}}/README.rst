@@ -1,19 +1,40 @@
 {{cookiecutter.project_name}}
 =============================
 
-.. image:: https://readthedocs.org/projects/{{cookiecutter.project_name}}/badge/?version=latest
-   :target: https://{{cookiecutter.project_name}}.readthedocs.io/en/latest/?badge=latest
+.. image:: https://readthedocs.org/projects/{{cookiecutter.github_repo}}/badge/?version=latest
+   :target: https://{{cookiecutter.github_repo}}.readthedocs.io/en/latest/?badge=latest
    :alt: Documentation Status
 
 
-.. image:: https://github.com/{{cookiecutter.author}}/{{cookiecutter.project_name}}/actions/workflows/test.yml/badge.svg
-   :target: https://github.com/{{cookiecutter.author}}/{{cookiecutter.project_name}}/actions/workflows/test.yml
+.. image:: https://github.com/{{cookiecutter.github_nickname}}/{{cookiecutter.github_repo}}/actions/workflows/test.yml/badge.svg
+   :target: https://github.com/{{cookiecutter.github_nickname}}/{{cookiecutter.github_repo}}/actions/workflows/test.yml
    :alt: Tests
       
 
-.. image:: https://codecov.io/gh/{{cookiecutter.author}}/{{cookiecutter.project_name}}/branch/master/graph/badge.svg
-   :target: https://codecov.io/gh/{{cookiecutter.author}}/{{cookiecutter.project_name}}
+.. image:: https://codecov.io/gh/{{cookiecutter.github_nickname}}/{{cookiecutter.github_repo}}/branch/master/graph/badge.svg
+   :target: https://codecov.io/gh/{{cookiecutter.github_nickname}}/{{cookiecutter.github_repo}}
    :alt: Coverage
+
+
+Features
+~~~~~~~~
+
+* Environment setup scripts
+
+  * miniconda
+  * virtualenv
+
+* Generic  Slurm launch scripts
+
+  * Single GPU
+  * Multi GPU
+  * Multi Node
+  * Hyperparameter Optimization
+
+* Checkpoints
+* Dataset Local Copy
+* Dataset splits (train, valid, test)
+* Hyper parameter search with Orion
 
 
 Getting Started
@@ -105,5 +126,5 @@ Contributing
 
 .. code-block:: bash
 
-   pip install git+https://github.com/{{cookiecutter.author}}/{{cookiecutter.project_name}}
+   pip install git+https://github.com/{{cookiecutter.github_nickname}}/{{cookiecutter.github_repo}}
 

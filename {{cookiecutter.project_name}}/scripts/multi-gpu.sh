@@ -1,4 +1,5 @@
 #!/bin/bash
+set -evx
 
 # Usage:
 #   sbatch --nodes 1 --gres=gpu:4 --cpus-per-gpu=4 --mem=16G scripts/multi-gpu.sh {{cookiecutter.project_name}}/train_normal.py
@@ -18,26 +19,35 @@
 #   RAM: 16 * 1 = 16 Go
 #   GPU:  4 * 1 = 4
 
-# Config
+# Python
+# ===================
+module load miniconda/3
+conda activate py39
+
+# Environment
 # ===================
 
 # Setup our rendez-vous point
 RDV_ADDR=localhost
-WORLD_SIZE=$SLURM_JOB_NUM_NODES
 
+export WORLD_SIZE=$SLURM_JOB_NUM_NODES
 
-# Setup
+#                $SLURM_GPUS_PER_NODE       => not set
+#                $SLURM_GPUS_ON_NODE        => not set
+#                $SLURM_GPUS                => not set
+#                $SLURM_JOB_GPUS=1,2,3,5
+#                $GPU_DEVICE_ORDINAL=0,1,2,3
+#                $CUDA_VISIBLE_DEVICES=0,1,2,3
+# export GPU_COUNT=$(python -c "import os; print(len(os.environ['GPU_DEVICE_ORDINAL'].split(',')))") 
+# export GPU_COUNT=$(($SLURM_CPUS_ON_NODE / $SLURM_CPUS_PER_GPU))
+export GPU_COUNT=$(python -c "import torch; print(torch.cuda.device_count())")  
+export OMP_NUM_THREADS=$SLURM_CPUS_ON_NODE
+
+export {{cookiecutter.PROJECT_NAME}}_DATASET_DEST=$SLURM_TMPDIR/dataset
+export {{cookiecutter.PROJECT_NAME}}_CHECKPOINT_PATH=~/scratch/checkpoint
+
+# Run
 # ===================
-
-module load python/3.7
-module load python/3.7/cuda/11.1/cudnn/8.0/pytorch
-source ~/envs/py37/bin/activate
-
-export SEEDPROJECT_DATASET_PATH=$SLURM_TMPDIR/dataset
-export SEEDPROJECT_CHECKPOINT_PATH=~/scratch/checkpoint
-
-export GPU_COUNT=$(python -c "import torch; print(torch.cuda.device_count())")
-export OMP_NUM_THREADS=$SLURM_JOB_CPUS_PER_NODE
 
 cmd="srun -l torchrun \
     --nproc_per_node=$GPU_COUNT\

@@ -1,4 +1,5 @@
 #!/bin/bash
+set -v
 
 # Slurm configuration
 # ===================
@@ -7,16 +8,28 @@
 #SBATCH --exclude=kepler4,kepler3
 
 
-# Config
+# Python
 # ===================
 
-export SCRATCH=/network/scratch/
-export EXPERIMENT_NAME='MySuperExperiment'
-export SEARCH_SPACE=$SLURM_TMPDIR/search-space.json
-export ORION_CONFIG=$SLURM_TMPDIR/orion-config.yml
+module load miniconda/3
+conda activate py39
 
+# Environment
+# ===================
+
+export EXPERIMENT_NAME="seedexperiment"
+
+
+# Constant
+export SCRATCH=~/scratch
+export {{cookiecutter.PROJECT_NAME}}_DATASET_DEST=$SLURM_TMPDIR/dataset
+export {{cookiecutter.PROJECT_NAME}}_CHECKPOINT_PATH=~/scratch/checkpoint
+export ORION_CONFIG=$SLURM_TMPDIR/orion-config.yml
+export SPACE_CONFIG=$SCRATCH/space-config_${SEQ}.json
 
 # Configure Orion
+# ===================
+# 
 #    - user hyperband
 #    - launch 4 workers for each tasks (one for each CPU)
 #    - worker dies if idle for more than a minute
@@ -24,9 +37,10 @@ export ORION_CONFIG=$SLURM_TMPDIR/orion-config.yml
 #
 cat > $ORION_CONFIG <<- EOM
     experiment:
+        name: ${EXPERIMENT_NAME}_${SEQ}
         algorithms:
             hyperband:
-                seed: None
+                seed: null
         max_broken: 10
 
     worker:
@@ -42,22 +56,20 @@ cat > $ORION_CONFIG <<- EOM
         type: pickleddb
 EOM
 
-# Configure the experiment search space
-cat > $SEARCH_SPACE <<- EOM
+cat > $SPACE_CONFIG <<- EOM
     {
+        "epochs": "orion~fidelity(1, 100, base=2)",
         "lr": "orion~loguniform(1e-5, 1.0)",
+        "weight_decay": "orion~loguniform(1e-10, 1e-3)",
+        "momentum": "orion~loguniform(0.9, 1.0)"
     }
 EOM
 
 
-# Setup
+# Run
 # ===================
 
-module load python/3.7
-module load python/3.7/cuda/11.1/cudnn/8.0/pytorch
-source ~/envs/py37/bin/activate
+cmd="orion hunt --config $ORION_CONFIG python $@ --config $SPACE_CONFIG"
 
-export SEEDPROJECT_DATASET_PATH=$SLURM_TMPDIR/dataset
-export SEEDPROJECT_CHECKPOINT_PATH=~/scratch/checkpoint
-
-orion --config $ORION_CONFIG hunt --config $SEARCH_SPACE python ./train.py
+echo $cmd
+$cmd
