@@ -1,6 +1,10 @@
 BSD 3-Clause License
 
+<<<<<<< HEAD
 seedcopyright, seedauthor
+=======
+{{cookiecutter.copyright}}, {{cookiecutter.author}}
+>>>>>>> 5654791815516697995be3f7358d7d5f38515013
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without

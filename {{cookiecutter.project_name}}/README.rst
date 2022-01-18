@@ -1,6 +1,7 @@
 seedproject
 =============================
 
+<<<<<<< HEAD
 .. image:: https://readthedocs.org/projects/seedrepo/badge/?version=latest
    :target: https://seedrepo.readthedocs.io/en/latest/?badge=latest
    :alt: Documentation Status
@@ -13,6 +14,20 @@ seedproject
 
 .. image:: https://codecov.io/gh/seedgithub/seedrepo/branch/master/graph/badge.svg
    :target: https://codecov.io/gh/seedgithub/seedrepo
+=======
+.. image:: https://readthedocs.org/projects/{{cookiecutter.project_name}}/badge/?version=latest
+   :target: https://{{cookiecutter.project_name}}.readthedocs.io/en/latest/?badge=latest
+   :alt: Documentation Status
+
+
+.. image:: https://github.com/{{cookiecutter.author}}/{{cookiecutter.project_name}}/actions/workflows/test.yml/badge.svg
+   :target: https://github.com/{{cookiecutter.author}}/{{cookiecutter.project_name}}/actions/workflows/test.yml
+   :alt: Tests
+      
+
+.. image:: https://codecov.io/gh/{{cookiecutter.author}}/{{cookiecutter.project_name}}/branch/master/graph/badge.svg
+   :target: https://codecov.io/gh/{{cookiecutter.author}}/{{cookiecutter.project_name}}
+>>>>>>> 5654791815516697995be3f7358d7d5f38515013
    :alt: Coverage
 
 
@@ -126,5 +141,9 @@ Contributing
 
 .. code-block:: bash
 
+<<<<<<< HEAD
    pip install git+https://github.com/seedgithub/seedrepo
+=======
+   pip install git+https://github.com/{{cookiecutter.author}}/{{cookiecutter.project_name}}
+>>>>>>> 5654791815516697995be3f7358d7d5f38515013
 
